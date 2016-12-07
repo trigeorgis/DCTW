@@ -1,7 +1,5 @@
-# TF_INC=$(python -c 'import tensorflow as tf; print(tf.sysconfig.get_include())')
-#echo $TF_INC
-MINICONDA="/vol/atlas/homes/gt108/miniconda/envs/menpo/"
-TF_INC="$MINICONDA/lib/python3.5/site-packages/tensorflow/include"
+TF_INC=$(python -c 'import tensorflow as tf; print(tf.sysconfig.get_include())')
+MINICONDA=$(dirname $(dirname $(dirname $(dirname $(dirname $TF_INC)))))
 
 rm -f trace_norm.so
 
